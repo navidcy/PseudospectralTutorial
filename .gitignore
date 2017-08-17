@@ -1,4 +1,4 @@
-# IPython Notebook
-.ipynb_checkpoints
-notebooks/.ipynb_checkpoints
+**/*.swp
+**/.ipynb_checkpoints
 notebooks/Differentiation_gaussian.ipynb
+
