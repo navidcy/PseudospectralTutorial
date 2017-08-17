@@ -78,7 +78,7 @@ for step = 1:nsteps
 
 
   # Calculate right hand side of vorticity equation.
-  qsh .= qh
+  qsh .= qh  # Necessary because irfft destroys its input.
   A_mul_B!(q, irfftplan, qsh)
 
   uh .=    im .* L .* invKsq .* qh
