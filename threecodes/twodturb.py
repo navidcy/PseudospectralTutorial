@@ -1,17 +1,17 @@
 import numpy as np
+import matplotlib.pyplot as plt
 import pyfftw
 import time
-import matplotlib.pyplot as plt
 
 from numpy import pi
 
 
 # Parameters
-nu = 2e-5
-Lx = 2*pi
-nx = 256
-dt = 1e-1
-nsteps = 10000
+nu = 8e-5
+Lx = 2.0*pi
+nx = 128
+dt = 1e-2
+nsteps = 5000
 nthreads = 4
 
 
@@ -57,9 +57,10 @@ fig = plt.figure(1)
 t1 = time.time()
 for step in range(nsteps):
 
-    if step % 100 is 0:
-        plt.clf(); plt.imshow(q); plt.axis('square')
-        plt.xlabel('$x$'); plt.xlabel('$y$'); plt.pause(0.01)
+    if step % 1000 is 0:
+        plt.clf()
+        plt.imshow(q)
+        plt.pause(0.01)
 
         print("step = {:4d}, t = {:06.1f} s, wall time = {:.3f}".format(
             step, t, time.time()-t1))

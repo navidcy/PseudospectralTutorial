@@ -3,11 +3,11 @@
 
 
 % Parameters
-nu = 2e-5;          % Viscosity
+nu = 8e-5;          % Viscosity
 Lx = 2*pi;          % Domain size
 nx = 128;           % Resolution
-dt = 2e-2;          % Time step
-nsteps = 10000;     % Number of time steps
+dt = 1e-2;          % Time step
+nsteps = 5000;      % Number of time steps
 
 
 % Construct square physical and wavenumber grid
@@ -24,12 +24,6 @@ Ksq = K.^2 + L.^2;         % Square wavenumber
 invKsq = 1./Ksq;           % Inverse square wavenumber
 invKsq(1, 1) = 0;          % for vorticity inversion
 
-kmax = 2*pi/Lx * nx/3;
-lmax = 2*pi/Ly * ny/3;
-
-filt = zeros(ny, nx);
-filt( (K/kmax).^2 + (L/lmax).^2 < 1 ) = 1;
-
 
 % Initial condition
 t = 0.0;
@@ -43,14 +37,13 @@ t1 = tic;
 for step = 1:nsteps
 
     % Quick plot
-    if mod(step-1, 100) == 0 & step > 1
+    if mod(step, 100) == 0 & step > 1
         disp([ ...
             'step = '      num2str(step,    '%04d'),   ', ', ...
             't = '         num2str(t,       '%06.1f'), ' s, ', ...
             'wall time = ' num2str(toc(t1), '%0.3f')]), t1=tic;
 
         clf, imagesc(q), axis xy, axis square, pause(0.01)
-        %clf, pcolor(X, Y, real(ifft2(psih))), shading flat, axis square, pause(0.01)
     end
 
 
@@ -61,8 +54,7 @@ for step = 1:nsteps
     u = -real(ifft2(1i*L.*psih));
     v =  real(ifft2(1i*K.*psih));
 
-    rhs = -1i*K.*fft2(u.*q) - 1i*L.*fft2(v.*q) - nu*Ksq.*qh ;
-    %rhs = -1i*K.*fft2(u.*q) - 1i*L.*fft2(v.*q) - nu*Ksq.*qh - 2i*K.*psih;
+    rhs = -1i*K.*fft2(u.*q) - 1i*L.*fft2(v.*q) - nu*Ksq.*qh;
 
     % Forward Euler timestep
     qh = qh + dt*rhs;
