@@ -2,3 +2,18 @@
 **/.ipynb_checkpoints
 notebooks/Differentiation_gaussian.ipynb
 
+*.DS_Store
+
+# Ignore various auxiliary tex files
+*.aux
+*.key
+*.log
+*.out
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.bak
+*.bbl
+*.blg
+*.synctex
+paper/main.pdf
