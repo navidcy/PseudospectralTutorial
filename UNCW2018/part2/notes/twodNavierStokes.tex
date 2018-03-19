@@ -1,0 +1,249 @@
+% !Mode:: "TeX:UTF-8"
+
+% !TEX TS-program = latex
+% !BIB TS-program = bibtex
+% !TEX encoding = UTF-8 Unicode
+
+
+
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{lineno}
+%\usepackage[notcite,notref]{showkeys}
+%\usepackage[notcite,notref]{showkeys}
+\usepackage{amssymb}
+\usepackage{amsmath,amsfonts}
+\usepackage{natbib}
+
+\renewcommand*\rmdefault{bch}
+
+\usepackage{epsfig}
+\usepackage[mathscr]{eucal}
+
+
+
+
+\usepackage{hyperref}
+\hypersetup{
+	hyperindex,
+	breaklinks,
+	colorlinks=true,
+	linkcolor=blue,
+	citecolor=magenta,
+%	allcolors=black,
+	bookmarks=true,
+	bookmarksopen=true,
+	bookmarksopenlevel=2,
+	pdfstartpage={1},
+	pdfstartview={FitH},
+	pdfview={FitH 0},%pdfstartview=FitH,pdfview=FitH,%pdfstartview={XYZ null null 1},
+	pdfauthor={N. C. Constantinou},
+	pdftitle={EDTRK4 time stepping notes},
+ }
+%\nofiles
+%\expandafter\ifx\csname package@font\endcsname\relax\else
+% \expandafter\expandafter
+% \expandafter\usepackage
+% \expandafter\expandafter
+% \expandafter{\csname package@font\endcsname}%
+%\fi
+%\usepackage[all]{hypcap}	%do not use with amestoc single column
+\usepackage{doi}
+
+
+
+
+
+
+\bibliographystyle{plain}
+
+%% For lucida bright
+%\usepackage[T1]{fontenc}
+%\usepackage{lucidabr}
+\usepackage{bm}
+%%%
+\usepackage{mdframed}
+
+\usepackage{color,amssymb,amsmath,amsthm}
+
+\usepackage{epsfig}
+\usepackage[mathscr]{eucal}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\sqr}{\mbox{sqr}}
+\newcommand{\saw}{\mbox{saw}}
+\newcommand{\ind}{\mbox{ind}}
+\newcommand{\sgn}{\mbox{sgn}}
+\newcommand{\erfc}{\mbox{erfc}}
+\newcommand{\erf}{\mbox{erf}}
+
+%% An average
+\newcommand{\avg}[1]{\mathrm{avg}[ {#1} ]}
+%% The right way to define new functions
+\newcommand{\sech}{\mathop{\rm sech}\nolimits}
+\newcommand{\cosech}{\mathop{\rm cosech}\nolimits }
+
+%% A nice definition
+\newcommand{\defn}{\ensuremath{\stackrel{\mathrm{def}}{=}}}
+%%%%%%%%% %%%%
+
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+
+
+
+%% Various boldsymbols
+\newcommand{\bx}{\boldsymbol{x}}
+\newcommand{\by}{\boldsymbol{y}}
+\newcommand{\bu}{\boldsymbol{u}}
+\newcommand{\ba}{\boldsymbol{a}}
+\newcommand{\bb}{\boldsymbol{b}}
+\newcommand{\bc}{\boldsymbol{c}}
+\newcommand{\bv}{\boldsymbol{v}}
+\newcommand{\bk}{\boldsymbol{k}}
+\newcommand{\bX}{\boldsymbol{X}}
+\newcommand{\br}{\boldsymbol{r}}
+\newcommand{\J}{\boldsymbol{\mathsf{J}}}
+\newcommand{\G}{\boldsymbol{\mathsf{G}}}
+\newcommand{\bA}{\ensuremath {\boldsymbol {A}}}
+\newcommand{\bU}{\ensuremath {\boldsymbol {U}}}
+\newcommand{\bE}{\ensuremath {\boldsymbol {E}}}
+\newcommand{\bJ}{\ensuremath {\boldsymbol {J}}}
+\newcommand{\bXX}{\ensuremath {\boldsymbol {\mathcal{X}}}}
+\newcommand{\bFF}{\ensuremath {\boldsymbol {F}}}
+\newcommand{\bF}{\ensuremath {\boldsymbol {F}^{\sharp}}}
+\newcommand{\bL}{\ensuremath {\boldsymbol {L}}}
+\newcommand{\bI}{\ensuremath {\boldsymbol {I}}}
+\newcommand{\bN}{\ensuremath {\boldsymbol {N}}}
+\newcommand{\bSigma}{\ensuremath {\boldsymbol {\Sigma}}}
+\newcommand{\kmax}{\ensuremath{k_{\mathrm{max}}}}
+
+
+\providecommand\bnabla{\boldsymbol{\nabla}}
+\providecommand\bcdot{\boldsymbol{\cdot}}
+
+
+
+\def\ii{{\rm i}}
+\def\dd{{\rm d}}
+\def\ee{{\rm e}}
+\def\DD{{\rm D}}
+%%% Cals here %%%%%
+
+%%%%%  Euler caligraphics %%%%%
+\newcommand{\A}{\mathscr{A}}
+\newcommand{\B}{\mathscr{B}}
+\newcommand{\E}{\mathscr{E}}
+\newcommand{\F}{\mathscr{F}}
+\newcommand{\K}{\mathscr{K}}
+\newcommand{\N}{\mathscr{N}}
+\newcommand{\U}{\mathscr{U}}
+\newcommand{\LL}{\mathscr{L}}
+\newcommand{\M}{\mathscr{M}}
+\newcommand{\T}{\mathscr{T}}
+%%\renewcommand{\O}{\mathscr{O}}
+
+
+
+\def\la{\langle}
+\def\ra{\rangle}
+
+\def\laa{\left \langle}
+
+\def\raa{\right \rangle}
+
+
+\newcommand{\st}{\ensuremath{\digamma}}
+\newcommand{\hzon}{\ensuremath{h_{\mathrm{zon}}}}
+
+\newcommand{\lap}{\ensuremath{\triangle}}
+\newcommand{\p}{\ensuremath{\partial}}
+\newcommand{\half }{\tfrac{1}{2}}
+\newcommand{\grad}{\ensuremath{\boldsymbol {\nabla}}}
+\newcommand{\pde}{\textsc{pde}}
+\newcommand{\ode}{\textsc{ode}}
+\newcommand{\cc}{\textsc{cc}}
+\newcommand{\dc}{\textsc{dc}}
+\newcommand{\dbc}{\textsc{dbc}}
+\newcommand{\byu}{\textsc{byu}}
+\newcommand{\rhs}{\textsc{rhs}}
+\newcommand{\lhs}{\textsc{lhs}}
+\newcommand{\com}{\, ,}
+\newcommand{\per}{\, .}
+
+
+
+
+\newcommand{\z}{\zeta}
+\newcommand{\h}{\eta}
+\renewcommand{\(}{\left(}
+\renewcommand{\[}{\left[}
+\renewcommand{\)}{\right)}
+\renewcommand{\]}{\right]}
+\newcommand{\<}{\left\langle}
+\renewcommand{\>}{\right\rangle}
+\renewcommand{\A}{\mathcal{A}}
+\renewcommand{\L}{\mathcal{L}}
+\renewcommand{\N}{\mathcal{N}}
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\transp}{\textrm{T}}
+
+\newcommand{\zhat}{\hat{\boldsymbol{z}}}
+
+
+\begin{document}
+
+
+
+
+\title{2D incompressible Navier--Stokes}
+
+\author{
+Navid Constantinou \thanks {Scripps Institution of Oceanography,
+University of California at San Diego, La Jolla, CA
+92093--0230, USA.
+%\protect\url{email:wryoung@ucsd.edu}.
+}
+}
+
+
+\maketitle
+
+The Navier--Stokes equations for an incompressible fluid of unit density are:
+\begin{gather}
+\partial_t \bu + \bu\bcdot\bnabla\bu = -\bnabla p + \nu\nabla^2\bu + g\zhat \com\label{eq1}\\
+\bnabla\bcdot\bu = 0 \per\label{eq2}
+\end{gather}
+
+Let us do some simplifications. Assume that the flow is two-dimensional that is it is confined on the $(x,y)$-plane:~$\bu=(u,v,0)$. The N--S equations written for each flow component are:
+\begin{gather}
+\partial_t u + u\partial_x u + v\partial_y u = -\partial_x p + \nu\nabla^2u \com\label{eq:u}\\
+\partial_t v + u\partial_x v + v\partial_y v = -\partial_y p + \nu\nabla^2v \com\label{eq:v}\\
+\partial_x u + \partial_y v = 0 \per\label{eq:uxvy}
+\end{gather}
+
+For two-dimensional incompressible flow we can define a streamfunction $\psi(x,y,t)$ so that
+\beq
+u = -\partial_y \psi\com\quad v= \partial_x\psi\per
+\eeq
+This way Eq.~\eqref{eq:uxvy} is trivially satisfied by definition so we don't have to worry about it anymore. Now, both Eqs.~\eqref{eq:u} and~\eqref{eq:v} involve {\it only} two fields: the streamfunction $\psi(x,y,t)$ and pressure $p(x,y,t)$.
+
+We can discard pressure if we consider the vorticity of the fluid, $\boldsymbol{\omega} = \bnabla\times\bu$. Since the flow is two-dimensional the vorticity only have one non-zero component:
+\beq
+\boldsymbol{\omega} = (0, 0, \underbrace{\partial_x v - \partial_y u}_{\equiv \zeta})\per
+\eeq
+The $z$-component of the vorticity $\zeta$ is obtained from the streamfunction as $\zeta = \nabla^2\psi$. By computing: $\partial_x(\text{Eq.~\eqref{eq:v}}) - \partial_y(\text{Eq.~\eqref{eq:u}})$ we can show that:
+\beq
+\partial_t (\nabla^2\psi) + u\partial_x \nabla^2\psi + v\partial_y\nabla^2\psi = \nu\nabla^4\psi\com
+\eeq
+or equivalently in terms of $\zeta$:
+\beq
+\partial_t \zeta + \underbrace{(-\partial_y\nabla^{-2}\zeta)}_{=u} \partial_x \zeta + \underbrace{(\partial_x\nabla^{-2}\zeta)}_{=v}  \partial_y\zeta = \nu\nabla^2\zeta\per \label{eq:zeta}
+\eeq
+The above equation involves {\it only} one field, $\zeta$ from which we can recover the flow $(u,v)$! For the inversion $\psi=\nabla^{-2}\zeta$ we need to specify boundary conditions for our flow fields. The easiest thing is to impose periodic boundary conditions. Then the inversion is rather easy (we will discuss it in class). Equation~\eqref{eq:zeta} is what we will solve numerically in class on Wednesday.
+
+\vspace{1em}
+
+\noindent\textbf{Exercise}: Derive Eq.~\eqref{eq:zeta} from Eqs.~\eqref{eq:u} and~\eqref{eq:v}.
+\end{document}
