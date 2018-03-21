@@ -2,18 +2,16 @@ using FourierFlows, PyPlot
 import FourierFlows.TwoDTurb
 
 # Parameters
- n, ν, dt, nsubs, maxc = 64, 3.2e-4, 0.02, 15, 7
- # n, ν, dt, nsubs, maxc = 128, 8.0e-5, 0.01, 30, 10
- # n, ν, dt, nsubs, maxc = 256, 0.0e-5, 0.005, 60, 20
- # n, ν, dt, nsubs, maxc = 512, 0.0e-5, 0.0025, 120, 25
- # n, ν, dt, nsubs, maxc = 1024, 0.0e-5, 0.001, 240, 28
+ # n, ν, dt, tfin, nsubs, maxc = 64, 3.2e-4, 0.02, 120, 25, 7
+ # n, ν, dt, tfin, nsubs, maxc = 128, 8.0e-5, 0.01, 110, 50, 11
+ # n, ν, dt, tfin, nsubs, maxc = 256, 0.0e-5, 0.005, 150, 60, 20
+ # n, ν, dt, tfin, nsubs, maxc = 512, 0.0e-5, 0.0025, 60, 120, 25
+  n, ν, dt, tfin, nsubs, maxc = 1024, 0.0e-5, 0.001, 60, 240, 28
 
  L = 2π
- nν = 0
+ nν = 1
 
 # Time-stepping
-
-tfin = 120
 nsteps = Int(tfin/dt)
 
 # Initialize problem
@@ -66,10 +64,10 @@ startwalltime = time()
 
 
 # fig, axs = subplots(ncols=2, nrows=1, figsize=(12, 4))
-fig, axs = subplots(ncols=1, nrows=1, figsize=(7, 6))
+fig, axs = subplots(ncols=1, nrows=1, figsize=(8, 8))
 plot_output(prob, fig, axs; drawcolorbar=true)
 
-asfasfd
+
 
 while prob.step < nsteps
   stepforward!(prob, nsubs)
