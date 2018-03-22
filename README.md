@@ -17,8 +17,9 @@ by [Gregory L. Wagner](https://glwagner.github.io) and [Navid C. Constantinou](h
 3) A code that solves the equation on a beta-plane.
 
 
-### Fluid Mechanics class
-### UNCW, March 2018
+
+## Fluid Mechanics class, UNCW
+### Wilmington, North Carolina, March 2018
 by [Navid C. Constantinou](http://www.navidconstantinou.com).
 
 `UNCW2018/part1` folder contains an IJulia notebook demonstrating
