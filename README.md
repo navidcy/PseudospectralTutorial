@@ -18,7 +18,7 @@ by [Gregory L. Wagner](https://glwagner.github.io) and [Navid C. Constantinou](h
 
 
 
-## Fluid Mechanics class, UNCW
+### Fluid Mechanics class, UNCW
 ### Wilmington, North Carolina, March 2018
 by [Navid C. Constantinou](http://www.navidconstantinou.com).
 
