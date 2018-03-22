@@ -26,4 +26,7 @@ by [Navid C. Constantinou](http://www.navidconstantinou.com).
 2) differentiation of periodic 1D functions using finite differences and spectral methods,
 3) differentiation of periodic 2D functions using spectral methods.
 
-`UNCW2018/part2` folder contains notes on 2D incompressible Navier-Stokes
+`UNCW2018/part2` folder contains:
+- notes on 2D incompressible Navier-Stokes
+- an IJulia notebook that solves 2D Navier-Stokes on a doubly periodic domain
+- `codes` folder containing Julia, Matlab and Python script for solving  2D Navier-Stokes on a doubly periodic domain
