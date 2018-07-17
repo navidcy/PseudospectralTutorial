@@ -192,6 +192,12 @@
 \newcommand{\zhat}{\hat{\boldsymbol{z}}}
 
 
+% \usepackage{datetime}
+% \newdate{date}{20}{03}{2018}
+% \date{\displaydate{date}}
+
+
+
 \begin{document}
 
 
@@ -203,10 +209,10 @@
 Navid Constantinou \thanks {Scripps Institution of Oceanography,
 University of California at San Diego, La Jolla, CA
 92093--0230, USA.
-%\protect\url{email:wryoung@ucsd.edu}.
 }
 }
 
+\date{March 20, 2018}
 
 \maketitle
 
@@ -229,7 +235,7 @@ u = -\partial_y \psi\com\quad v= \partial_x\psi\per
 \eeq
 This way Eq.~\eqref{eq:uxvy} is trivially satisfied by definition so we don't have to worry about it anymore. Now, both Eqs.~\eqref{eq:u} and~\eqref{eq:v} involve {\it only} two fields: the streamfunction $\psi(x,y,t)$ and pressure $p(x,y,t)$.
 
-We can discard pressure if we consider the vorticity of the fluid, $\boldsymbol{\omega} = \bnabla\times\bu$. Since the flow is two-dimensional the vorticity only have one non-zero component:
+We can discard pressure if we consider the vorticity of the fluid, $\boldsymbol{\omega} = \bnabla\times\bu$. Since the flow is two-dimensional the vorticity only has one non-zero component:
 \beq
 \boldsymbol{\omega} = (0, 0, \underbrace{\partial_x v - \partial_y u}_{\equiv \zeta})\per
 \eeq
@@ -241,7 +247,7 @@ or equivalently in terms of $\zeta$:
 \beq
 \partial_t \zeta + \underbrace{(-\partial_y\nabla^{-2}\zeta)}_{=u} \partial_x \zeta + \underbrace{(\partial_x\nabla^{-2}\zeta)}_{=v}  \partial_y\zeta = \nu\nabla^2\zeta\per \label{eq:zeta}
 \eeq
-The above equation involves {\it only} one field, $\zeta$ from which we can recover the flow $(u,v)$! For the inversion $\psi=\nabla^{-2}\zeta$ we need to specify boundary conditions for our flow fields. The easiest thing is to impose periodic boundary conditions. Then the inversion is rather easy (we will discuss it in class). Equation~\eqref{eq:zeta} is what we will solve numerically in class on Wednesday.
+The above equation involves {\it only} one field, $\zeta$, from which we can recover the flow $(u, v)$! For the inversion $\psi=\nabla^{-2}\zeta$ we need to specify boundary conditions for our flow fields. The easiest thing is to impose periodic boundary conditions. Then the inversion is rather easy (we will discuss it in class). Equation~\eqref{eq:zeta} is what we will solve numerically in class on Wednesday.
 
 \vspace{1em}
 
